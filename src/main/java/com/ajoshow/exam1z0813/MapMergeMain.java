@@ -1,9 +1,8 @@
 package com.ajoshow.exam1z0813;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
-public class HashMapMergeMain {
+public class MapMergeMain {
 
     public static void main(String[] args) {
 
@@ -16,7 +15,7 @@ public class HashMapMergeMain {
         map2.put("B", 2);
         map2.put("C", 3);
 
-        map1.forEach((k,v) -> map2.merge(k,v, (i,j)->j));
+        map1.forEach((k, v) -> map2.merge(k, v, (i, j) -> j));
 
         map1.keySet().forEach(System.out::print);
         map2.values().forEach(System.out::print);

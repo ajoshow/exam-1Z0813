@@ -31,6 +31,7 @@ public class MethodReferenceMain {
         List<String> fnames = Arrays.asList("a", "b", "c");
         Tiger t = new Tiger();
 
+        process(fnames, t);
         process(fnames, t::eat);
         process(fnames, t::calories);
         process(fnames, MethodReferenceMain::size);

@@ -12,7 +12,19 @@ public class PathNormalizationMain {
         Path path = Paths.get("./dir/..");
         System.out.println(path.normalize());
 
+        path = Paths.get("src/main/../resources/file2.txt");
+        System.out.println(path.normalize());
+
         path = Paths.get("../src/main/../../resources/file2.txt");
+        System.out.println(path.normalize());
+
+        path = Paths.get("../src/java/main/../../resources/file2.txt");
+        System.out.println(path.normalize());
+
+        path = Paths.get("../src/java/main/../../resources/../../file2.txt");
+        System.out.println(path.normalize());
+
+        path = Paths.get("../src/java/main/../../resources/./../file2.txt");
         System.out.println(path.normalize());
 
         path = Paths.get("../src/main/././resources/file2.txt");

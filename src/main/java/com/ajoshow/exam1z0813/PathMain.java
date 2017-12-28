@@ -1,13 +1,18 @@
 package com.ajoshow.exam1z0813;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class PathMain {
 
-    public static void main(String[] args) throws IOException {
-        Path path = Paths.get("/src/main/resources/file2.txt");
+    public static void main(String[] args) {
+        Path path = Paths.get("src/main/resources/file2.txt");
+        System.out.println(path.getRoot());
+        System.out.println(path.getName(0));
+        System.out.println(path.subpath(0, 2));
+        System.out.println("------------");
+
+        path = Paths.get("/src/main/resources/file2.txt");
         System.out.println(path.getRoot());
         System.out.println(path.getName(0));
         System.out.println(path.subpath(0, 2));
@@ -47,6 +52,9 @@ public class PathMain {
         // following line throws IllegalArgumentException.
 //        System.out.println(path1.relativize(path2));
 
+        // but if both are also a relative path, then treat they the same as both are full path.
+        path1 = Paths.get("src/main/resources/file1");
+        System.out.println(path1.relativize(path2));
     }
 
 
